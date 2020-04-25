@@ -38,7 +38,7 @@ class Navbar extends React.Component{
                
                     <div className='nav-header'>
                     
-                        <Link to='/homecaregrant'>
+                        <Link to='/'>
                             <img  src={logo} alt='Beach Resort' style={{width: 150, height:150, marginTop: -18}} />
                         </Link>
                         <button type='submit' className='nav-btn' onClick={this.handleToggle}>
