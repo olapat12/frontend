@@ -13,14 +13,19 @@ export default class Apply extends React.Component{
             email: '',
             homeadd: '',
             phone: '',
-            statuss: '',
+            statuss: 'single',
              gender:  '',
             age: '',
-           work: '',
+           work: 'employed',
             star:'',
 
         income: '',
-
+        grant: 'cash',
+        nation:'',
+        card: 'none',
+        Cardrep: 'bad',
+        carry: '',
+        rent: 'rent',
         error: '',
         fn: 'none',
         sn: 'none',
@@ -94,6 +99,12 @@ var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a
              gender:  this.state.gender,
             mstatus: this.state.statuss,
             age: this.state.age,
+            cardrep: this.state.cardrep,
+            card: this.state.card,
+            rent: this.state.rent,
+            grant: this.state.grant,
+            nation: this.state.nation,
+            carry: this.state.carry
     }
 
     let options ={
@@ -351,7 +362,14 @@ cfirst(){
                  
                  <p style={{display:this.state.st, color: 'red'}}>field cannot be empty </p>
                     </div>
-    
+                    <div className="form-group">
+                    <h5>Nationality*</h5>
+             <input type="text" className="form-control"  value={this.state.nation} 
+                        onChange={this.cpass}  name='nation' placeholder="Nationality" />
+                 
+                 <p style={{display:this.state.na, color: 'red'}}>field cannot be empty </p>
+                    </div>
+
                     <div className="form-group">
                       <h5>Phone</h5>  
                      <input type="text" className="form-control" value={this.state.phone} onMouseOut={this.allphone}
@@ -359,7 +377,12 @@ cfirst(){
                       <p style={{display:this.state.ph, color: 'red'}}>field cannot be empty or contain letter</p>
                     </div>
     
-    
+                    <div className="form-group">
+                    <h5>Phone Courier</h5>
+             <input type="text" className="form-control"  value={this.state.carry}
+                        onChange={this.cpass}  name='carry' placeholder="Phone courier" />
+                    </div>
+                    
     
                     <div className="form-group">
                         <h5>Age*</h5>
@@ -412,6 +435,37 @@ cfirst(){
                <option value='separated'>Separated</option>
             </select>
                 </div>
+                <div className="form-group">
+                    <h5>Do you own a house or rent ?*</h5>
+                    <select name='rent'  value={this.state.rent} 
+                  onChange={this.cpass}  className='form-control' > 
+               <option value='rent '>rent</option>
+               <option value='own'>Own</option>
+               <option value='mortgage'>mortgage</option>
+               <option value='others'>others</option>
+            </select>  </div>
+                <div className="form-group">
+                    <h5>Type of card*</h5>
+                    <select name='card'  value={this.state.card} 
+                  onChange={this.cpass}  className='form-control' > 
+               <option value='none '>none</option>
+               <option value='cash'>Cash</option>
+               <option value='check'>Check</option>
+            </select>  </div>
+            <div className="form-group">
+                    <h5>Card Report*</h5>
+                    <select name='cardrep'  value={this.state.cardrep} 
+                  onChange={this.cpass}  className='form-control' > 
+               <option value='good '>good</option>
+               <option value='bad'>bad</option>
+            </select>  </div>
+                <div className="form-group">
+                    <h5>Form of Grant*</h5>
+                    <select name='grant'  value={this.state.grant} 
+                  onChange={this.cpass}  className='form-control' > 
+               <option value='cash'>Cash</option>
+               <option value='check'>Check</option>
+            </select>  </div>
                     <h5 style={{display:this.state.errors, color: 'red', textAlign: 'center', fontStyle: 'italic'}}> 
                      Something went wrong, make sure you fill all the fields.</h5>
                     <button onClick={this.addCounselor} 
