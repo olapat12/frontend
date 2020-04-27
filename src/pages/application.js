@@ -118,7 +118,7 @@ var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a
     }
     
 
-   return fetch('https://afternoon-badlands-54078.herokuapp.com/api/register', options )
+   return fetch('https://homecaregrant.herokuapp.com/api/register', options )
    .then((res)=>{
     if(res.status > 300){
         this.setState({errors : 'block'})
